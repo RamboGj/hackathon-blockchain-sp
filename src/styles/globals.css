@@ -7,3 +7,50 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  -webkit-font-smoothing: none;
+  @apply bg-white;
+}
+
+#range {
+  -webkit-appearance: none;
+  width: 100%;
+  background: #0A747C;
+  border-radius: 8px;
+  height: 20px;
+  
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/*Mozilla Firefox*/
+
+#range::-moz-range-thumb {
+  background: url('../assets/percentage.png');
+  height: 50px;
+  width: 30px;
+  border: 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#range::-moz-range-progress {
+  border-radius: 8px;
+  height: 20px;
+  background: #1BDCE3;
+}
+
+/*Other Browsers*/
+/*same as -moz-range-thumb*/
+#range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: url('../assets/percentage.png');
+  height: 50px;
+  width: 30px;
+  border: 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
