@@ -3,12 +3,46 @@ import { MagnifyingGlass } from 'phosphor-react'
 import payImage from '../assets/pay.png'
 import transferImage from '../assets/transfer.png'
 import receiveImage from '../assets/receive.png'
-import { useState } from 'react'
 
 export default function Home() {
-  const [percentageToInvest, setPercentageToInvest] = useState<number>(10)
+  // const [percentageToInvest, setPercentageToInvest] = useState<number>(10)
+  // const [walletAddress, setWalletAddress] = useState<string>('')
+  // const [isLoading, setIsLoading] = useState<boolean>(false)
+  // const [isConnected, setIsConnected] = useState<boolean>(false)
+  // const [userName, setUserName] = useState<string>('')
+  // const [email, setEmail] = useState<string>('')
+  // const [password, setPassword] = useState<string>('')
 
-  const valueOnAccount = 1600.28
+  const valueOnAccount = 1601.07
+
+  // function handleSubmit() {
+  //   setIsConnected(true)
+  // }
+
+  // async function handleConnectWithMetamask() {
+  //   try {
+  //     const { ethereum } = window
+
+  //     if (ethereum) {
+  //       setIsLoading(true)
+  //       const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+  //       await provider.send('eth_requestAccounts', [])
+
+  //       const signer = await provider.getSigner()
+  //       const address = await signer.getAddress()
+
+  //       if (address) {
+  //         setWalletAddress(address)
+  //         setIsConnected(true)
+  //         setIsLoading(false)
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.log('erro ao pegar address: ', error)
+  //     setIsLoading(false)
+  //   }
+  // }
 
   return (
     <div className="w-screen">
@@ -71,16 +105,16 @@ export default function Home() {
                   max={100}
                   min={10}
                   step={1}
-                  value={percentageToInvest}
-                  onChange={(e) =>
-                    setPercentageToInvest(Number(e.target.value))
-                  }
+                  value={30}
+                  // onChange={(e) =>
+                  //   setPercentageToInvest(Number(e.target.value))
+                  // }
                 />
                 <div className="flex items-center justify-between font-thin text-sm">
                   <span>10%</span>
-                  <span className="text-lg text-aqua700">
+                  {/* <span className="text-lg text-aqua700">
                     {percentageToInvest}
-                  </span>
+                  </span> */}
                   <span>100%</span>
                 </div>
               </div>
@@ -91,8 +125,8 @@ export default function Home() {
                   </div>
                   <div className="flex-col leading-none">
                     <span>
-                      R${' '}
-                      {(valueOnAccount * (percentageToInvest / 100)).toFixed(2)}
+                      R$ 160.00
+                      {/* {(valueOnAccount * (percentageToInvest / 100)).toFixed(2)} */}
                     </span>
                     <p className="text-xs font-regular">30,70 USD</p>
                   </div>
@@ -132,16 +166,60 @@ export default function Home() {
                     <p className="text-xs text-gray400">0,02 USD</p>
                   </div>
                 </div>
-                <div className="flex justify-between">
-                  <span>Scroll Test</span>
-                  <div>
-                    <strong className="text-gray500">R$0,10</strong>
-                    <p className="text-xs text-gray400">0,02 USD</p>
-                  </div>
-                </div>
               </div>
             </section>
           </div>
+          {/* <div className="w-full space-y-12">
+              <h1 className="text-center font-bold text-logo text-3xl">
+                Log in
+              </h1>
+              <form onSubmit={handleSubmit}>
+                <div className="flex-col space-y-4">
+                  <input
+                    type="text"
+                    placeholder="name"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    className="w-full rounded-md py-2 px-3 border-b border-transparent bg-gray-50 focus:outline-none focus:border-aqua500 transition duration-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full rounded-md py-2 px-3 border-b border-transparent bg-gray-50 focus:outline-none focus:border-aqua500 transition duration-500"
+                  />
+                  <input
+                    type="password"
+                    placeholder="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full rounded-md bg-gray-50 py-2 px-3 border-b border-transparent focus:outline-none focus:border-aqua500 transition duration-500"
+                  />
+                </div>
+
+                <div className="flex gap-x-4 mt-12">
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="flex flex-1 justify-center bg-aqua500 disabled:bg-aqua700 py-3 px-6 h-12 text-center font-bold hover:bg-aqua700 transtion duration-500 rounded-md"
+                  >
+                    {isLoading ? (
+                      <CircleNotch className="animate-spin h-full" width={32} />
+                    ) : (
+                      'Connect'
+                    )}
+                  </button>
+                  <button
+                    onClick={handleConnectWithMetamask}
+                    disabled={isLoading}
+                    className="w-12 h-12 rounded-md bg-aqua500 hover:scale-105 transtion duration-500"
+                  >
+                    <Image src={metamaskLogo} alt="logo da metamask" />
+                  </button>
+                </div>
+              </form>
+            </div> */}
         </div>
       </div>
     </div>
